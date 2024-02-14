@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap"
+            rel="stylesheet"
+        />
+        <title>Untuk kamu ❤️</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Merienda', cursive;
+            }
+            body {
+                background-color: #0f172a;
+            }
+            .container {
+                display: flex;
+                justify-content: space-evenly;
+                align-items: flex-start;
+                flex-wrap: wrap;
+                height: 100vh;
+            }
+            .p {
+                display: flex;
+                align-items: flex-start;
+                flex-wrap: wrap;
+                gap: 5px;
+                font-size: 0.85rem;
+            }
+            h1 {
+                align-self: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                margin: auto;
+                text-shadow: 2px 2px 20px #e879f9;
+                color: #a78bfa;
+                font-size: 3rem;
+            }
+            span {
+                text-transform: uppercase;
+                opacity: 0;
+            }
+            span:nth-of-type(1) {
+                animation:
+                    blink 1s ease-in-out,
+                    blink 1s ease-in-out 3s;
+            }
+            span:nth-of-type(2) {
+                animation:
+                    blink 1s ease-in-out 1s,
+                    blink 1s ease-in-out 3s;
+            }
+            span:nth-of-type(3) {
+                animation:
+                    blink 1s ease-in-out 2s,
+                    blink 1s ease-in-out 3s;
+            }
+            h1 p {
+                opacity: 0;
+                animation: blink 1s ease-in-out 4s;
+            }
+            @keyframes blink {
+                0% {
+                    opacity: 0;
+                }
+                50% {
+                    opacity: 1;
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>
+                <div>
+                    <span>F</span>
+                    <span>o</span>
+                    <span>r</span>
+                </div>
+                <p>Aira Putri Vaneza</p>
+            </h1>
+            <div class="p"></div>
+        </div>
+
+        <script>
+            window.addEventListener('DOMContentLoaded', () => {
+                const container = document.querySelector('.container');
+                const animasi = document.querySelector('h1');
+                setTimeout(() => {
+                    container.style.height = 'auto';
+                    createParagraphWithDelay(1);
+                    animasi.style.display = 'none';
+                }, 5000);
+            });
+
+            const container = document.querySelector('.p');
+
+            const createParagraphWithDelay = count => {
+                if (count <= 10000000000000000000) {
+                    const paragraph = document.createElement('p');
+                    paragraph.textContent = '❤️';
+
+                    container.appendChild(paragraph);
+
+                    setTimeout(() => {
+                        createParagraphWithDelay(count + 1);
+                    }, 1);
+                }
+            };
+        </script>
+    </body>
+</html>
